@@ -15,6 +15,14 @@ local function UpdateOptions()
 		C_CVar.SetCVar("autoLootDefault", 0)
 	end
 
+	if AutoOptionDB.actionTargetingOn then
+		--C_CVar.SetCVar("softTargetEnemy", 3)
+		Settings.SetValue("PROXY_ACTION_TARGETING", true)
+	else
+		--C_CVar.SetCVar("softTargetEnemy", 0)
+		Settings.SetValue("PROXY_ACTION_TARGETING", false)
+	end
+
 	local layoutInfo = C_EditMode.GetLayouts()
 	local numLayoutPresets = 2
 	for index, layout in ipairs(layoutInfo.layouts) do
@@ -83,7 +91,8 @@ local function OnSettingsLoaded(self, event, ...)
 	end
 
 	local settingsInfo = {
-	{ option = "autoLootOn", detail = "Auto Loot On" },
+	{ option = "autoLootOn", detail = "Auto Loot Enabled" },
+	{ option = "actionTargetingOn", detail = "Action Targeting Enabled" },
 	{ option = "showActionBar2", detail = "Show Action Bar 2" },
 	{ option = "showActionBar3", detail = "Show Action Bar 3" },
 	{ option = "showActionBar4", detail = "Show Action Bar 4" },
