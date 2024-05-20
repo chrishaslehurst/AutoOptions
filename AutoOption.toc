@@ -1,0 +1,8 @@
+## Interface: 100207
+## Title: AutoOptions
+## Notes: An addon for setting some character specific options globally across all characters including Auto Loot, Edit Mode Layout and Action Bar Visibility.
+## Author: Teacake
+## Version: 1.0.0
+## SavedVariables: AutoOptionDB
+
+AutoOption.lua
